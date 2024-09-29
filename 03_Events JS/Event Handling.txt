@@ -1,0 +1,56 @@
+Here are the short and simple answers to the questions:
+
+What is event handling in JavaScript?
+
+It is how JavaScript reacts to user actions like clicks, typing, or scrolling.
+How do you add an event listener to an element in JavaScript?
+
+Use element.addEventListener('event', function). Example:
+javascript
+Copy code
+button.addEventListener('click', () => alert('Clicked!'));
+What is the difference between addEventListener() and onclick?
+
+addEventListener() lets you add multiple event handlers, but onclick can only handle one.
+Explain event propagation (capturing and bubbling) in JavaScript.
+
+Capturing: The event goes from the top (document) to the target element.
+Bubbling: The event starts at the target element and goes up to the document.
+What is event delegation, and why is it useful?
+
+It's when you add one event listener to a parent element to handle events on its child elements. It's useful for performance and handling dynamic elements.
+How can you prevent the default action of an event?
+
+Use event.preventDefault(). Example:
+javascript
+Copy code
+link.addEventListener('click', (e) => e.preventDefault());
+What is the event.target and how is it used?
+
+event.target is the element that triggered the event. Example:
+javascript
+Copy code
+element.addEventListener('click', (e) => console.log(e.target));
+What is the difference between event.preventDefault() and event.stopPropagation()?
+
+preventDefault() stops the default browser behavior (like a link opening).
+stopPropagation() stops the event from bubbling or capturing.
+How do you remove an event listener in JavaScript?
+
+Use removeEventListener(). Example:
+javascript
+Copy code
+element.removeEventListener('click', handleClick);
+What is the once option in addEventListener()?
+
+It makes the event listener run only once. Example:
+javascript
+Copy code
+element.addEventListener('click', handleClick, { once: true });
+Explain the difference between a mouseenter and mouseover event.
+
+mouseenter doesn’t bubble and triggers only when the mouse enters the element.
+mouseover bubbles and triggers even when moving over child elements.
+What are synthetic events in JavaScript frameworks like React?
+
+Synthetic events are wrappers around native events to make them work consistently across browsers.

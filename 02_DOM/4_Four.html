@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Aur Code</title>
+</head>
+<body Style="background-color: black; color:white">
+    <ul class="language">
+        <li>JAVASCRIPT</li>
+    </ul>
+</body>
+
+<script>
+
+
+// Add New Language
+
+
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addLanguage('JAVA')
+    addLanguage('PYTHON')
+
+    // Same but in Optimized Way because in above way we have to traverse through all the child and last we add text
+
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.append(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addLanguage('CPP')
+    addLanguage('SQL')
+
+
+// Edit Langauge
+
+    const secondLang = document.querySelector("li:nth-child(2)")    
+    //secondLang.innerHTML ='MOJO'                                                                      // Way 1
+
+    // Optimized way to edit childs
+    const newli = document.createElement('li')                                                          // Way 2
+    newli.textContent = "MOJO"
+    secondLang.replaceWith(newli)
+
+    const firstLang = document.querySelector("li:first-child")                                          // Way 3
+    firstLang.outerHTML = '<li>C</li>'
+// Remove Language
+
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove();
+
+
+</script>
+</html>

@@ -1,0 +1,59 @@
+
+Here are popular questions related to asynchronous JavaScript, along with short and simple answers:
+
+What is asynchronous programming in JavaScript?
+
+It allows code to run without blocking the execution of other code. For example, you can fetch data from a server while other parts of your code keep running.
+What are callbacks in JavaScript?
+
+A function passed as an argument to another function, which is executed after the first function completes. Example:
+javascript
+Copy code
+setTimeout(() => { console.log('Done!'); }, 1000);
+What is the problem with callback hell?
+
+When callbacks are nested inside other callbacks, making the code hard to read and maintain.
+What are Promises in JavaScript?
+
+A promise represents a value that will be available in the future. It can be resolved (success), rejected (failure), or pending (still in progress).
+How do you create a promise in JavaScript?
+
+Example:
+javascript
+Copy code
+const promise = new Promise((resolve, reject) => {
+  // Do something, then call resolve() or reject()
+});
+What is async and await in JavaScript?
+
+async makes a function return a promise, and await pauses the execution until the promise resolves. Example:
+javascript
+Copy code
+async function fetchData() {
+  let data = await fetch('url');
+  console.log(data);
+}
+What is the difference between Promise.then() and async/await?
+
+Promise.then() handles promises with chained callbacks, while async/await makes asynchronous code look more like regular code, making it easier to read.
+How can you handle errors in promises?
+
+Use .catch() for promises and try...catch with async/await. Example:
+javascript
+Copy code
+fetch('url').then().catch(error => console.log(error));
+What is the purpose of Promise.all()?
+
+It runs multiple promises in parallel and returns results when all promises resolve or one rejects. Example:
+javascript
+Copy code
+Promise.all([promise1, promise2]).then(results => console.log(results));
+What is Promise.race() in JavaScript?
+
+It runs multiple promises but resolves as soon as the first promise settles (resolves or rejects).
+What is event loop in JavaScript?
+
+It's how JavaScript handles asynchronous operations, processing events in a queue and allowing non-blocking I/O operations.
+What is microtask and macrotask in JavaScript?
+
+Microtasks (like promises) have higher priority and run before macrotasks (like setTimeout) in the event loop.

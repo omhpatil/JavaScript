@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Fetch</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    const requestURL = 'https://api.github.com/users/omhpatil';
+
+    const abc = new XMLHttpRequest();
+    abc.open('GET',requestURL);
+
+    abc.onreadystatechange = function(){
+        console.log(abc.readyState);
+        if(abc.readyState === 4){
+            const data = JSON.parse(this.responseText);
+            //console.log(data);
+            console.log(data.login);                            // Here i fetched username 
+        }
+    }
+    abc.send();
+
+</script>
+</html>
